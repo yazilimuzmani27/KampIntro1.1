@@ -1,0 +1,31 @@
+﻿using System;
+
+namespace Constructor
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Customer customer = new Customer {Id = 1,FirstName = "Engin", LastName ="Demiroğ" , City = "Ankara"};
+            Customer customer2 = new Customer(2,"Derin","Demiroğ","Ankara");
+        }
+    }
+
+    class Customer {
+
+        public Customer () { }
+        public Customer(int id , string firstName , string lastName , string city) 
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            City = city;
+            Console.WriteLine("Yapıcı Blok Çalıştı");
+        }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string City { get; set; }
+    }
+}
